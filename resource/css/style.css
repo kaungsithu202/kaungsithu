@@ -11,8 +11,18 @@ html{
     font-weight: 300;
     font-size: 20px;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
-
+.clear-fix{
+    zoom: 1;
+}
+.clear-fix:after{
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
 /*----------Reusable Section ----------*/
 .row{
     max-width: 1140px;
@@ -51,7 +61,7 @@ section{
    
 }
 /*---------- Button Section ----------*/
-.btn{
+.btn,input[type=submit]{
     display: inline-block;
     padding: 10px 30px;
     font-weight: 300;
@@ -88,6 +98,7 @@ header{
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img/hero.jpg);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     height: 100vh;
     /* overflow:hidden; */
 }
@@ -197,6 +208,10 @@ h3{
 }
 /*----------How it works ----------*/
 
+.section-steps{
+    background-color: rgba(240, 234, 234, 0.733);
+}
+
 
 .steps-box:first-child{
     margin-top: 30px;
@@ -238,4 +253,191 @@ h3{
 .works-step:last-of-type{
     margin-bottom: 80px;
 
+}
+
+/*----------Cities Section ----------*/
+
+.box img{
+    width: 100%;
+    height: auto;
+}
+.city-feature{
+    margin-bottom: 15px;
+}
+.icon-small{
+    color: #e67e22;
+    display: inline-block;
+    text-align: center;
+    font-size: 120%;
+    width: 30px;
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+    margin-right: 10px;
+}
+.city-feature a {
+    text-decoration: none;
+    color: #e67e22;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s,color 0.2s;
+    
+}
+.city-feature a:hover,.city-feature a:active{
+    color: #000;
+    border-bottom: 1px solid #e67e22;
+}
+
+/*----------Testimonials Section ----------*/
+.section-testimonials{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('../img/back-customers.jpg');
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+blockquote{
+    font-style: italic;
+    padding: 2%;
+    line-height: 145%;
+}
+blockquote:before {
+     content:open-quote;
+     font-size: 400%;
+    }
+blockquote:after {
+     content:close-quote;
+     font-size: 400%;
+     color: transparent;
+     height: 0;
+    }
+cite{
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+}
+cite img{
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    
+    vertical-align: middle;
+}
+
+/*----------Sign Up Section ----------*/
+.section-plan{
+    background: #fff9f9c0;
+}
+.plan-box{
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+}
+.plan-box div{
+    padding: 15px;
+    border-bottom: 1px solid #fffefe
+
+}
+.plan-price{
+    font-size: 300%;
+    margin-bottom:10px ;
+    font-weight: 100;
+    color: #e67e22;
+}
+.plan-price span{
+    font-size: 30%;
+    font-weight: 300;
+}
+.plan-price-meal{
+    font-size: 80%;
+}
+.plan-box{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;;
+}
+.plan-box ul {
+    list-style:none ;
+}
+.plan-box ul li{
+    padding: 5px 0;
+
+}
+.plan-box div:first-child{
+    background-color: #fff8d0;
+}
+.plan-box div:last-child{
+    text-align: center;
+    border: 0;
+
+}
+/*----------Form Section ----------*/
+.content-form{
+    width: 60%;
+    margin: 0 auto;
+}
+input[type=text],input[type=email],select,textarea{
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid chocolate;
+}
+textarea{
+    height:100px;
+}
+input[type=checkbox]{
+    margin: 10px 5px 10px 0;
+}
+*:focus{
+    outline: none;
+}
+/*----------footer Section ----------*/
+footer{
+    background-color: rgb(27, 27, 27);
+    
+
+}
+.footer-nav{
+    list-style: none;
+    float: left;
+}
+.social-links{
+    list-style: none;
+    float: right;
+}
+.footer-nav li,
+.social-links li{
+    display: inline-block;
+    margin-right: 20px;
+}
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin-right: 0;
+
+}
+.footer-nav li a,
+.social-links li a{
+    text-decoration: none;
+    border-bottom: 0;
+    color: #999696;
+}
+.footer-nav li a,
+.social-links li a{
+    text-decoration: none;
+    border-bottom: 0;
+    color: #999696;
+}
+.footer-nav li a:hover,
+.footer-nav li a:active,
+.social-links li a:hover,
+.social-links li a:active{
+    color: #fff;
+}
+.social-links li a{
+    font-size: 130%;
+}
+footer p {
+    text-align: center;
+    color: #888;
+    font-size: 90%;
+    margin-top: 30px;
+    padding: 40px;
 }
