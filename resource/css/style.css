@@ -1,9 +1,18 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 /*---------- Basic Setup ----------*/
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
+
 html{
     background-color: #fff;
     color: #555;
@@ -11,6 +20,11 @@ html{
     font-weight: 300;
     font-size: 20px;
     text-rendering: optimizeLegibility;
+    
+    
+    
+}
+body{
     overflow-x: hidden;
 }
 .clear-fix{
@@ -57,7 +71,9 @@ section{
     margin-bottom: 10px;
     position: relative;
     /* left: 20%; */
-    transform: translateX(60%);
+    -webkit-transform: translateX(60%);
+        -ms-transform: translateX(60%);
+            transform: translateX(60%);
    
 }
 /*---------- Button Section ----------*/
@@ -67,6 +83,8 @@ section{
     font-weight: 300;
     text-decoration: none;
     border-radius: 200px;
+    -webkit-transition: background-color 0.2s,color 0.2s,border 0.2s;
+    -o-transition: background-color 0.2s,color 0.2s,border 0.2s;
     transition: background-color 0.2s,color 0.2s,border 0.2s;
     
    
@@ -95,19 +113,23 @@ section{
 }
 /*----------Header Section ----------*/
 header{
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.7)),to(rgba(0,0,0,0.7))),url(img/hero.jpg);
+    background-image: -o-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img/hero.jpg);
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img/hero.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     height: 100vh;
-    /* overflow:hidden; */
+    overflow:hidden;
 }
 .hero-text-box{
     width: 1140px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
 }
 h1,h2,h3{
     font-weight: 300;
@@ -147,6 +169,15 @@ h3{
     float: left;
     margin-top: 20px;
 }
+.logo-black{
+    display: none;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin-top: 5px 0;
+}
+
+/* ---------Main-nav ---------*/
 .main-nav{
     float: right;
     list-style: none;
@@ -164,6 +195,8 @@ h3{
     text-transform: uppercase;
     font-size: 90%;
     border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    -o-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
     padding: 8px 0;
 }
@@ -171,6 +204,35 @@ h3{
 .main-nav li a:active{
     border-bottom: 2px solid #af5404;
 }
+/* ---------Sticky-nav ---------*/
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(202, 196, 196, 0.9);
+    box-shadow: 0 2px 2px #555;
+    z-index: 9999;
+}
+.sticky .main-nav li a{
+    color: #555;
+    padding: 15px 0;
+}
+.sticky .main-nav{
+    margin-top: 15px;
+}
+.sticky .logo{
+    display: none;
+}
+.sticky .logo-black{
+    display: block;
+}
+
+
+
+
+
+
 /*----------feature Section ----------*/
 .section-feature .long-para{
     margin-bottom: 30px;
@@ -198,12 +260,20 @@ h3{
     opacity: 70%;
     width: 100%;
     height: auto;
-    transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+        -ms-transform: scale(1.15);
+            transform: scale(1.15);
+    -webkit-transition:opacity 0.5s,scale 0.5s, -webkit-transform 0.5s;
+    transition:opacity 0.5s,scale 0.5s, -webkit-transform 0.5s;
+    -o-transition:transform 0.5s, opacity 0.5s,scale 0.5s;
     transition:transform 0.5s, opacity 0.5s,scale 0.5s;
+    transition:transform 0.5s, opacity 0.5s,scale 0.5s, -webkit-transform 0.5s;
     
 }
 .meal-photo img:hover{
-    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+        -ms-transform: scale(1.03);
+            transform: scale(1.03);
     opacity: 1;
 }
 /*----------How it works ----------*/
@@ -280,6 +350,8 @@ h3{
     color: #e67e22;
     padding-bottom: 2px;
     border-bottom: 1px solid transparent;
+    -webkit-transition: border-bottom 0.2s,color 0.2s;
+    -o-transition: border-bottom 0.2s,color 0.2s;
     transition: border-bottom 0.2s,color 0.2s;
     
 }
@@ -290,6 +362,8 @@ h3{
 
 /*----------Testimonials Section ----------*/
 .section-testimonials{
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.7)),to(rgba(0,0,0,0.7))),url('../img/back-customers.jpg');
+    background-image: -o-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('../img/back-customers.jpg');
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('../img/back-customers.jpg');
     background-size: cover;
     color: #fff;
@@ -326,6 +400,7 @@ cite img{
 /*----------Sign Up Section ----------*/
 .section-plan{
     background: #fff9f9c0;
+    /* width: 100%; */
 }
 .plan-box{
     background-color: #fff;
@@ -352,7 +427,8 @@ cite img{
     font-size: 80%;
 }
 .plan-box{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;;
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;;
 }
 .plan-box ul {
     list-style:none ;
