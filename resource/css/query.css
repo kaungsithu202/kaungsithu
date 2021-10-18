@@ -78,6 +78,7 @@
     .main-nav{
         display: none;
     }
+    
     .long-para{
         width: 100%;
         margin-left:0;
@@ -107,6 +108,48 @@
     }
     .app-screen{
         width: 60%;
+    }
+    .mobile-nav-icon{
+        display: inline-block;
+    }
+    .main-nav{
+        float: left;
+        margin: 35px 0 0 25px;
+       
+    }
+    .sticky .main-nav{
+        margin-top: 10px;
+    }
+    .main-nav li{
+        display: block;
+    }
+    .main-nav li a{
+        display: block;
+        border: 0;
+        padding: 10px 0;
+        font-size: 100%;
+        transform: translateX(30%);
+    }
+    .sticky  .main-nav li a{
+       padding: 10px 0; 
+       transform: translateX(50%);
+    }
+    .sticky .mobile-nav-icon i{
+        color: #555;
+        position: relative;
+        bottom: 30px;
+        transform: translateY(50%);
+        padding: auto 0;
+    }
+    .sticky .logo-black{
+        position: relative;
+        padding: auto 0;
+        transform: translateY(10%);
+
+    }
+    .scroll-top{
+        height: 40px;
+        width: 40px;
     }
 }
 @media only screen and (max-width:480px){
